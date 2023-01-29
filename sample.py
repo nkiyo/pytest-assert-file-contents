@@ -1,3 +1,5 @@
+import textwrap
+
 # sudo apt install -y python3-pip
 # pip3 install pytest
 # python3 -m pytest sample.py
@@ -18,11 +20,10 @@ def my_function(s):
 # ユニットテストを実行する
 def test_my_function():
     # fileっぽい内容を文字列定義する
-    # TODO dedentでインデント削除
-    file_contents = """\
+    file_contents = textwrap.dedent("""\
     <hoge>
       hogehoge
-    </hoge>"""
+    </hoge>""")
     print(file_contents)
     actual = my_function(file_contents)
     assert actual == file_contents
